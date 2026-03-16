@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prerequisites
 *.d
 
@@ -39,3 +40,8 @@
 
 # debug information files
 *.dwo
+=======
+#Ignores backup files
+*~
+#Ignores auto-save files
+*#
