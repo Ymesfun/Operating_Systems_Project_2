@@ -50,6 +50,8 @@
 *.*#
 #ignores the makefile specifically. Might be better to make this a *~
 Makefile~
+#ignore .o files.
+*.o
 #Last pattern to ignore.
 *.*'
 >>>>>>> 09e9854 (Pushing an extra .gitignore rule.)
