@@ -44,4 +44,12 @@
 #Ignores backup files
 *~
 #Ignores auto-save files
+<<<<<<< HEAD
 *#
+=======
+*.*#
+#ignores the makefile specifically. Might be better to make this a *~
+Makefile~
+#Last pattern to ignore.
+*.*'
+>>>>>>> 09e9854 (Pushing an extra .gitignore rule.)
