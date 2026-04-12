@@ -1,4 +1,4 @@
-#include "Socket.hpp"
+#include "socket.h"
 #include <iostream>
 #include <netinet/in.h>
 #include <sys/socket.h>
@@ -45,7 +45,5 @@ std::unique_ptr<Socket> ServerSocket::Accept() {
         perror("Accept failed");
         return nullptr;
     }
-
-    // Wrap the raw FD in a unique_ptr that will automatically close the FD with RAII 
-    return std::unique_ptr<Socket>(new Socket(client_fd));
+    return std::make_unique<Socket>(client_fd);
 }

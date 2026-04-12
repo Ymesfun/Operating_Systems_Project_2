@@ -3,9 +3,10 @@
 #include <string>
 #include <vector>
 #include <pthread.h>
+#include <iostream>
 #include "LRUCache.h"
 
-LRUCache::LRUCache(int c) : capacity(c) {
+LRUCache::LRUCache(size_t c) : capacity(c) {
     pthread_mutex_init(&cache_mutex, nullptr);
 }
 
@@ -18,10 +19,13 @@ std::vector<char> LRUCache::get(const std::string& path) {
     auto it = map.find(path);
     
     if (it == map.end()) {
+	//Thought it'd be nice to help visualize a cache miss and hit in our demonstration. Comment out for serious usage
+	std::cout<<"Cache miss on: "<<path<<" fetching from disk!"<<std::endl;
         pthread_mutex_unlock(&cache_mutex);
         return {}; // empty vector == cache miss
     }
-    
+    //Same as the cache miss comment, but on cache hits
+    std::cout<<"Cache hit on: "<<path<<" fetching from cache!"<<std::endl;
     dll.splice(dll.begin(), dll, it->second);
     std::vector<char> data = it->second->content;
     
@@ -37,7 +41,7 @@ void LRUCache::put(const std::string& path, const std::vector<char>& content) {
         dll.splice(dll.begin(), dll, it->second);
     } 
     else {
-	//Start the eviction process if our data doesnt exist
+	//evicts the LRU if our data doesnt exist
         if (map.size() >= capacity) { 
             std::string oldPath = dll.back().path;
             map.erase(oldPath);

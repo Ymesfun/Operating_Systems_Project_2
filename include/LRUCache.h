@@ -19,11 +19,11 @@ private:
 
     std::unordered_map<std::string, std::list<CacheEntry>::iterator> map;
     
-    int capacity;
+    size_t capacity;
     pthread_mutex_t cache_mutex;
 
 public:
-    explicit LRUCache(int c);
+    explicit LRUCache(size_t c);
     ~LRUCache();
 
     std::vector<char> get(const std::string& path);

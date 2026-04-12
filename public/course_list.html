@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SelfCOMP > Courses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header>
+    <h1>SelfCOMP &gt; Courses</h1>
+  </header>
+
+  
+  <nav class = "top-nav">
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="upload.html">Upload</a></li>
+      <li><a href="course_list.html">Courses</a></li>
+    </ul>
+  </nav>
+  <!--Everything above is from homepage.html-->
+
+
+
+  <!--Container holding sidebar and main content-->
+  <div class="layout">
+
+    <!--Sidebar section-->
+    <aside class="sidebar">
+
+      <!--First group of COMP courses-->
+      <div class="group">
+
+        <!--Title-->
+        <div class="group-title"><a href="#" class="group-link">COMP</a></div>
+        <ul class="course-list">
+
+          <!--List of comp courses. Currently hardcoded, eventual migration to fetching a list off of the DB.-->
+          <li><a href="#COMP1701">COMP1701</a></li>
+          <li><a href="#COMP1633">COMP1633</a></li>
+          <li><a href="#COMP2631">COMP2631</a></li>
+          <li><a href="#COMP2633">COMP2633</a></li>
+        </ul>
+      </div>
+
+      <!--Placeholder until data courses decidedd-->
+      <div class="group">
+        <div class="group-title">DATA</div>
+      </div>
+
+      <!--Placegolder until CIS courses decided-->
+      <div class="group">
+        <div class="group-title">CIS</div>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <!--empty right side to mimic the hifi prototype-->
+    </main>
+  </div>
+  <script src="courses.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+  
