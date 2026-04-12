@@ -38,4 +38,4 @@ This project terminates the connection immediately, because the number of possib
 
 Currently, the server will just actively run. Because the main thread is the listening socket, ctrl+c is required to kill the program.
 
-Currently, no clean way to terminate exists, need to hit ctrl+c to terminate, and Kernel handles freeing up fds.
+Currently, uses some basic overwriting of SIGINT to handle server termination. Still is messy and buggy, but good enough for now.
