@@ -90,6 +90,7 @@ void ThreadPool::HandleClient(std::unique_ptr<Socket> client) {
     else if (req.path.find(".png") != std::string::npos) contentType = "image/png";
     else if (req.path.find(".jpg") != std::string::npos || req.path.find(".jpeg") != std::string::npos) contentType = "image/jpeg";
     else if (req.path.find(".css") != std::string::npos) contentType = "text/css";
+    else if (req.path.find(".mp4") != std::string::npos) contentType = "video/mp4"; // Forgot to push this from my local machine.
     std::string header;
     if (!content.empty()) {
         header = "HTTP/1.1 200 OK\r\n"
